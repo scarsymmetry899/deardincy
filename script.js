@@ -50,6 +50,28 @@ function upgradeStampArtwork() {
   });
 }
 
+function installClosingNote() {
+  if (!stampView || $('#finalThankYou')) return;
+  const closing = document.createElement('section');
+  closing.id = 'finalThankYou';
+  closing.className = 'final-thank-you';
+  closing.setAttribute('aria-label', 'Thank you note');
+  closing.innerHTML = `
+    <div class="closing-envelope" aria-hidden="true">
+      <div class="closing-envelope-flap"></div>
+      <div class="closing-seal">☀</div>
+    </div>
+    <p class="closing-kicker">one last little note</p>
+    <h4>thank you for reading.</h4>
+    <div class="closing-signature">
+      <span>Yours Truly,</span>
+      <strong>Mr. Sun! :)</strong>
+    </div>
+    <div class="closing-flowers" aria-hidden="true">❀ ✿ ❁ ✾ ❀</div>
+  `;
+  stampView.appendChild(closing);
+}
+
 function getAudioContext() {
   if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
   return audioContext;
@@ -75,6 +97,7 @@ function paperRustle(duration = 0.18, volume = 0.015) {
 
 window.addEventListener('load', () => {
   upgradeStampArtwork();
+  installClosingNote();
   setTimeout(() => loader?.classList.add('is-hidden'), 700);
 });
 
