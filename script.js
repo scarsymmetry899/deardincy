@@ -5,19 +5,19 @@ const stampData = [
   ['smile','that smile','That smile of yours has a way of making everything around it feel a little lighter.'],
   ['laugh','that laugh','Your laugh is one of those things that is very easy to notice and very hard not to like.'],
   ['emoji','of course 😂','I’m convinced no conversation with you is officially complete until at least one 😂 shows up.'],
-  ['coffee','coffee?','That coffee still stands, by the way — whenever it feels right.'],
+  ['coffee','coffee?','That coffee still stands, by the way, whenever it feels right.'],
   ['italian','Italian detour','Italian food still feels like a very good combination of good food, good conversation and no rush.'],
   ['foodie','for the foodie','Good food clearly matters to you, and that could lead to a lot of very good discoveries.'],
   ['hidden','hidden places','There is something very nice about preferring the little hidden places people usually walk past.'],
   ['style','style note','You have that rare kind of style that looks effortless even when everything is clearly very well put together.'],
-  ['glasses','the glasses','The glasses really do suit you — they somehow make the whole look even more you.'],
+  ['glasses','the glasses','The glasses really do suit you. They somehow make the whole look even more you.'],
   ['virgo','Virgo things','The attention to little details and that quietly put-together energy does feel very Virgo.'],
   ['templerun','Temple Run','Somehow Temple Run has become one of those random little things that feels very you.'],
   ['tall',"5'10 energy","Being 5'10 already gives you a bit of main-character entrance energy, whether you admit it or not."],
   ['travel','little explorer','The best kind of travel is probably the kind that leaves you with one place nobody else thought to look for.'],
   ['bihar','Bihar','A little bit of Bihar somewhere in the story makes the whole picture feel more interesting.'],
   ['kajoo','Kajoo','Kajoo is still one of those names that is impossible to hear without smiling a little.'],
-  ['name','Dincy Kajol','Dincy Kajol has a very nice ring to it — soft, memorable, and very much its own thing.'],
+  ['name','Dincy Kajol','Dincy Kajol has a very nice ring to it. Soft, memorable, and very much its own thing.'],
   ['lilly','serious work','Serious work, sharp mind, and somehow still enough room left for all the laughter.'],
   ['navy','Navy roots','There is something quietly lovely about having Navy roots in the story.'],
   ['curious','little things','It’s funny how the smallest details are usually the ones that make someone the most interesting.']
@@ -53,10 +53,14 @@ const letterView = $('#letterView');
 const stampView = $('#stampView');
 const stampGrid = $('#stampGrid');
 const moreStamps = $('#moreStamps');
+const closeLetter = $('#closeLetter');
+const stampProgress = $('#stampProgress');
+const finalView = $('#finalView');
 let soundOn = false;
 let audioContext = null;
 let opened = false;
 let extrasVisible = false;
+const openedStamps = new Set();
 
 function renderStamps(){
   stampGrid.innerHTML = '';
@@ -71,11 +75,27 @@ function renderStamps(){
     button.addEventListener('click', () => {
       const alreadyOpen = button.classList.contains('is-open');
       $$('.stamp-card.is-open').forEach(card => card.classList.remove('is-open'));
-      if(!alreadyOpen) button.classList.add('is-open');
+      if(!alreadyOpen) {
+        button.classList.add('is-open');
+        openedStamps.add(key);
+        updateStampProgress();
+      }
       paperRustle(.08,.006);
     });
     stampGrid.appendChild(button);
   });
+}
+
+function updateStampProgress(){
+  const total = stampData.length;
+  const count = openedStamps.size;
+  if(count >= total){
+    stampProgress.textContent = 'you found every little stamp ♡';
+    closeLetter.hidden = false;
+  } else {
+    stampProgress.textContent = `${count} of ${total} little stamps opened`;
+    closeLetter.hidden = true;
+  }
 }
 
 function getAudioContext(){
@@ -129,6 +149,14 @@ $('#readAgain').addEventListener('click', () => {
   letterView.hidden = false;
   window.scrollTo({top:0,behavior:'smooth'});
 });
+closeLetter.addEventListener('click', () => {
+  paperRustle(.26,.018);
+  stampView.classList.remove('is-visible');
+  stampView.hidden = true;
+  finalView.hidden = false;
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
 moreStamps.addEventListener('click', () => {
   extrasVisible = !extrasVisible;
   $$('.stamp-card[data-extra="true"]').forEach(card => card.hidden = !extrasVisible);
@@ -146,5 +174,6 @@ $('#soundToggle').addEventListener('click', async () => {
 
 window.addEventListener('load', () => {
   renderStamps();
+  updateStampProgress();
   setTimeout(() => loader.classList.add('is-hidden'), 500);
 });
