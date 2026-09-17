@@ -26,9 +26,21 @@
 .stamp-card.is-open .stamp-back{transform:rotateY(0)}
 .stamp-postage{position:absolute;right:9px;top:7px;color:var(--red);font-size:11px;line-height:1;opacity:.7}
 .stamp-icon{display:grid;place-items:center;min-width:42px;height:42px;margin:0 0 8px;color:var(--red);font-size:30px;line-height:1;font-family:Georgia,"Times New Roman",serif;font-weight:400}
+.stamp-icon svg{width:42px;height:42px;display:block;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
 .stamp-title{font-size:16px;line-height:1.15}
 .stamp-card.is-open{z-index:4;transform:translateY(-5px) rotate(0deg) scale(1.025)}
 .stamp-card.is-open .stamp-edge{box-shadow:0 14px 24px rgba(73,48,28,.14)}
 
-@media(max-width:900px){.stamp-card{min-height:154px}.stamp-grid{gap:14px}.stamp-front,.stamp-back{inset:12px}.stamp-icon{min-width:36px;height:36px;font-size:26px}}
-@media(max-width:640px){.turn-letter-btn{padding:10px 38px 11px 14px;gap:7px}.turn-copy{font-size:16px}.turn-arrow{font-size:18px}.stamp-grid{gap:10px}.stamp-card{min-height:142px}.stamp-edge::after{inset:9px}.stamp-front,.stamp-back{inset:10px;padding:14px 10px 12px}.stamp-icon{min-width:32px;height:32px;margin-bottom:6px;font-size:23px}.stamp-title{font-size:14px}.stamp-back{font-size:12px;line-height:1.32}.stamp-postage{font-size:9px;right:7px;top:6px}}
+.final-thank-you{position:relative;margin:34px auto 8px;width:min(640px,92%);padding:30px 28px 34px;text-align:center;background:#fbf6ea;border:1.5px dashed rgba(154,63,77,.42);box-shadow:0 10px 22px rgba(73,48,28,.08);transform:rotate(-.25deg)}
+.final-thank-you::before{content:"";position:absolute;inset:9px;border:1px dashed rgba(39,74,132,.28);pointer-events:none}
+.closing-envelope{position:relative;width:150px;height:94px;margin:0 auto 18px;background:#fbf3e6;border:2px solid var(--red);box-shadow:0 8px 15px rgba(73,48,28,.08)}
+.closing-envelope-flap{position:absolute;left:0;right:0;top:0;height:58%;background:#faf2e0;clip-path:polygon(0 0,100% 0,50% 92%)}
+.closing-seal{position:absolute;left:50%;top:47%;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;transform:translate(-50%,-50%);background:var(--red);color:var(--yellow);font-size:17px;border:1.5px dashed #f8dd87}
+.closing-kicker{position:relative;margin:0 0 3px;color:var(--red);font-size:14px}
+.final-thank-you h4{position:relative;margin:0;color:var(--ink);font-size:clamp(28px,3.5vw,42px);font-weight:500;line-height:1.1}
+.closing-signature{position:relative;margin-top:16px;color:var(--red);font-size:17px;line-height:1.35}
+.closing-signature strong{display:block;margin-top:3px;color:var(--blue);font-size:24px;font-weight:500}
+.closing-flowers{position:relative;margin-top:16px;color:var(--blue);font-size:19px;letter-spacing:4px}
+
+@media(max-width:900px){.stamp-card{min-height:154px}.stamp-grid{gap:14px}.stamp-front,.stamp-back{inset:12px}.stamp-icon{min-width:36px;height:36px;font-size:26px}.stamp-icon svg{width:36px;height:36px}.final-thank-you{margin-top:28px}}
+@media(max-width:640px){.turn-letter-btn{padding:10px 38px 11px 14px;gap:7px}.turn-copy{font-size:16px}.turn-arrow{font-size:18px}.stamp-grid{gap:10px}.stamp-card{min-height:142px}.stamp-edge::after{inset:9px}.stamp-front,.stamp-back{inset:10px;padding:14px 10px 12px}.stamp-icon{min-width:32px;height:32px;margin-bottom:6px;font-size:23px}.stamp-icon svg{width:32px;height:32px}.stamp-title{font-size:14px}.stamp-back{font-size:12px;line-height:1.32}.stamp-postage{font-size:9px;right:7px;top:6px}.final-thank-you{width:100%;margin-top:24px;padding:24px 18px 28px}.closing-envelope{width:132px;height:82px}.final-thank-you h4{font-size:30px}.closing-signature strong{font-size:22px}}
