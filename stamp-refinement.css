@@ -1,5 +1,4 @@
 /* Post-letter stamp refinement */
-.icon-sprite{position:absolute;width:0;height:0;overflow:hidden}
 .letter-view{perspective:1200px;transform-style:preserve-3d}
 .letter-view.is-turning{animation:letterTurnOut .72s cubic-bezier(.55,.05,.22,.99) both}
 @keyframes letterTurnOut{0%{opacity:1;transform:rotateY(0) translateX(0);filter:none}45%{opacity:.95;transform:rotateY(-7deg) translateX(-8px);filter:drop-shadow(18px 12px 20px rgba(60,42,24,.10))}100%{opacity:0;transform:rotateY(-20deg) translateX(-42px);filter:drop-shadow(24px 14px 24px rgba(60,42,24,.04))}}
@@ -20,15 +19,16 @@
 .stamp-card:hover{transform:translateY(-4px) rotate(var(--stamp-tilt,0deg))}
 .stamp-edge{inset:0;background:#f4e7c7;clip-path:polygon(0 8%,3% 8%,3% 2%,7% 2%,7% 8%,11% 8%,11% 2%,15% 2%,15% 8%,19% 8%,19% 2%,23% 2%,23% 8%,27% 8%,27% 2%,31% 2%,31% 8%,35% 8%,35% 2%,39% 2%,39% 8%,43% 8%,43% 2%,47% 2%,47% 8%,51% 8%,51% 2%,55% 2%,55% 8%,59% 8%,59% 2%,63% 2%,63% 8%,67% 8%,67% 2%,71% 2%,71% 8%,75% 8%,75% 2%,79% 2%,79% 8%,83% 8%,83% 2%,87% 2%,87% 8%,91% 8%,91% 2%,95% 2%,95% 8%,100% 8%,100% 92%,95% 92%,95% 98%,91% 98%,91% 92%,87% 92%,87% 98%,83% 98%,83% 92%,79% 92%,79% 98%,75% 98%,75% 92%,71% 92%,71% 98%,67% 98%,67% 92%,63% 92%,63% 98%,59% 98%,59% 92%,55% 92%,55% 98%,51% 98%,51% 92%,47% 92%,47% 98%,43% 98%,43% 92%,39% 92%,39% 98%,35% 98%,35% 92%,31% 92%,31% 98%,27% 98%,27% 92%,23% 92%,23% 98%,19% 98%,19% 92%,15% 92%,15% 98%,11% 98%,11% 92%,7% 92%,7% 98%,3% 98%,3% 92%,0 92%);box-shadow:0 9px 16px rgba(73,48,28,.10)}
 .stamp-edge::after{content:"";position:absolute;inset:12px;border:1px solid rgba(154,63,77,.26);pointer-events:none}
-.stamp-front,.stamp-back{inset:14px;padding:18px 16px 16px;border:1.5px solid rgba(39,74,132,.52);box-shadow:inset 0 0 0 4px rgba(255,255,255,.25);background:linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18)),#f3e7c5}
-.stamp-front::after,.stamp-back::after{content:"";position:absolute;inset:5px;border:1px dashed rgba(154,63,77,.28);pointer-events:none}
+.stamp-front,.stamp-back{position:absolute;inset:14px;display:grid;place-items:center;align-content:center;padding:18px 16px 16px;backface-visibility:hidden;border:1.5px solid rgba(39,74,132,.52);transition:transform .55s cubic-bezier(.2,.8,.2,1);box-shadow:inset 0 0 0 4px rgba(255,255,255,.25);background:linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18)),#f3e7c5}
+.stamp-front{transform:rotateY(0)}
+.stamp-back{transform:rotateY(180deg);color:var(--red);font-size:13.5px;line-height:1.4;text-align:center;padding:20px 18px;background:#fbf3df}
+.stamp-card.is-open .stamp-front{transform:rotateY(-180deg)}
+.stamp-card.is-open .stamp-back{transform:rotateY(0)}
 .stamp-postage{position:absolute;right:9px;top:7px;color:var(--red);font-size:11px;line-height:1;opacity:.7}
-.stamp-icon{display:block;width:42px;height:42px;margin:0 0 8px;color:var(--red);fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round;overflow:visible;font-size:0}
-.stamp-icon svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.stamp-icon{display:grid;place-items:center;min-width:42px;height:42px;margin:0 0 8px;color:var(--red);font-size:30px;line-height:1;font-family:Georgia,"Times New Roman",serif;font-weight:400}
 .stamp-title{font-size:16px;line-height:1.15}
-.stamp-back{font-size:13.5px;line-height:1.4;padding:20px 18px;background:#fbf3df}
 .stamp-card.is-open{z-index:4;transform:translateY(-5px) rotate(0deg) scale(1.025)}
 .stamp-card.is-open .stamp-edge{box-shadow:0 14px 24px rgba(73,48,28,.14)}
 
-@media(max-width:900px){.stamp-card{min-height:154px}.stamp-grid{gap:14px}.stamp-front,.stamp-back{inset:12px}.stamp-icon{width:36px;height:36px}}
-@media(max-width:640px){.turn-letter-btn{padding:10px 38px 11px 14px;gap:7px}.turn-copy{font-size:16px}.turn-arrow{font-size:18px}.stamp-grid{gap:10px}.stamp-card{min-height:142px}.stamp-edge::after{inset:9px}.stamp-front,.stamp-back{inset:10px;padding:14px 10px 12px}.stamp-front::after,.stamp-back::after{inset:4px}.stamp-icon{width:32px;height:32px;margin-bottom:6px;stroke-width:2.2}.stamp-title{font-size:14px}.stamp-back{font-size:12px;line-height:1.32}.stamp-postage{font-size:9px;right:7px;top:6px}}
+@media(max-width:900px){.stamp-card{min-height:154px}.stamp-grid{gap:14px}.stamp-front,.stamp-back{inset:12px}.stamp-icon{min-width:36px;height:36px;font-size:26px}}
+@media(max-width:640px){.turn-letter-btn{padding:10px 38px 11px 14px;gap:7px}.turn-copy{font-size:16px}.turn-arrow{font-size:18px}.stamp-grid{gap:10px}.stamp-card{min-height:142px}.stamp-edge::after{inset:9px}.stamp-front,.stamp-back{inset:10px;padding:14px 10px 12px}.stamp-icon{min-width:32px;height:32px;margin-bottom:6px;font-size:23px}.stamp-title{font-size:14px}.stamp-back{font-size:12px;line-height:1.32}.stamp-postage{font-size:9px;right:7px;top:6px}}
