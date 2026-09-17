@@ -15,11 +15,11 @@ const stampData = [
   ['templerun','Temple Run','Somehow Temple Run has become one of those random little things that feels very you.'],
   ['tall',"5'10 energy","Being 5'10 already gives you a bit of main-character entrance energy, whether you admit it or not."],
   ['travel','little explorer','The best kind of travel is probably the kind that leaves you with one place nobody else thought to look for.'],
-  ['bihar','Bihar','A little bit of Bihar in your life makes the whole picture feel even more interesting.'],
+  ['bihar','Bihar','Your journey from Bihar to Hyderabad makes you an even more interesting person to get to know.'],
   ['kajoo','Kajoo','Kajoo is still one of those names that is impossible to hear without smiling a little.'],
   ['name','Dincy Kajol','Dincy Kajol has a very nice ring to it. Soft, memorable, and very much its own thing.'],
   ['lilly','serious work','Serious work, sharp mind, and somehow still enough room left for all the laughter.'],
-  ['navy','Navy roots','There is something quietly lovely about having Navy roots woven into your life.'],
+  ['navy','Navy roots','Having Navy roots in your family adds a quiet strength and character that feels very much a part of who you are.'],
   ['curious','little things','It’s funny how the smallest details are usually the ones that make someone the most interesting.']
 ];
 
