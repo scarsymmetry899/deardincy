@@ -7,222 +7,60 @@
   <meta name="description" content="A little handwritten letter for Dincy." />
   <title>for Dincy</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="stamp-refinement.css" />
 </head>
 <body>
-  <div class="loader" id="loader" aria-live="polite">
-    <div>
-      <div class="loader-heart">♡</div>
-      <p>folding the letter…</p>
-    </div>
-  </div>
-
+  <div class="loader" id="loader" aria-live="polite"><div><div class="loader-heart">♡</div><p>folding the letter…</p></div></div>
   <main>
     <section class="scene" id="landing">
-      <div class="frame">
-        <div class="inner inner--landing">
-          <div class="doodles" aria-hidden="true">
-            <div class="doodle doodle--1">✤</div>
-            <div class="doodle doodle--2">✤</div>
-            <div class="doodle doodle--3">♡</div>
-            <div class="doodle doodle--4">✦</div>
-          </div>
-
-          <div class="top-note">for Dincy</div>
-
-          <header class="hero">
-            <p class="kicker">hey…</p>
-            <h1>I left something<br />here for you.</h1>
-            <p class="subcopy">open when you feel like it ♡</p>
-          </header>
-
-          <div class="envelope-area">
-            <button class="envelope-button" id="openEnvelope" aria-label="Open the letter">
-              <div class="envelope" id="envelope">
-                <div class="envelope-back"></div>
-                <div class="paper-peek" aria-hidden="true"></div>
-                <div class="envelope-pocket"></div>
-                <div class="envelope-flap"></div>
-                <div class="seal">☀</div>
-              </div>
-            </button>
-            <button class="hand-link" id="openLetterText">open the letter →</button>
-          </div>
-
-          <button class="sound-toggle" id="soundToggle" aria-pressed="false">♪ sound off</button>
-        </div>
-      </div>
+      <div class="frame"><div class="inner inner--landing">
+        <div class="doodles" aria-hidden="true"><div class="doodle doodle--1">✤</div><div class="doodle doodle--2">✤</div><div class="doodle doodle--3">♡</div><div class="doodle doodle--4">✦</div></div>
+        <div class="top-note">for Dincy</div>
+        <header class="hero"><p class="kicker">hey…</p><h1>I left something<br />here for you.</h1><p class="subcopy">open when you feel like it ♡</p></header>
+        <div class="envelope-area"><button class="envelope-button" id="openEnvelope" aria-label="Open the letter"><div class="envelope" id="envelope"><div class="envelope-back"></div><div class="paper-peek" aria-hidden="true"></div><div class="envelope-pocket"></div><div class="envelope-flap"></div><div class="seal">☀</div></div></button><button class="hand-link" id="openLetterText">open the letter →</button></div>
+        <button class="sound-toggle" id="soundToggle" aria-pressed="false">♪ sound off</button>
+      </div></div>
     </section>
 
     <section class="scene letter-scene" id="letterScene" aria-hidden="true">
-      <div class="frame frame--letter">
-        <div class="inner inner--letter">
-          <div class="doodles" aria-hidden="true">
-            <div class="doodle doodle--1">✤</div>
-            <div class="doodle doodle--2">✤</div>
-            <div class="doodle doodle--3">♡</div>
-          </div>
-
-          <div class="letter-view" id="letterView">
-            <header class="letter-header">
-              <p class="letter-kicker">a little handwritten honesty</p>
-              <h2>Dear Dincy,</h2>
-            </header>
-
-            <div class="paper-holder">
-              <article class="letter-paper">
-                <div class="letter-inner">
-                  <p>
-                    Hope this letter finds you well. Over the last few days we shared a lot of laughs and fun vibe, however somethings which I have said may have not really felt pleasant. I really feel bad for what I said. I've been thinking about it a lot and its left a void in me. Honestly, it feels like a bad dream and your silence is killing me. I just wanted to apologise once again for my mistake. Words can be bitter sometimes and I didn't want it to be that way. Hope you forgive me :)
-                  </p>
-                  <div class="signature">
-                    <span>Yours Truly,</span>
-                    <strong>Mr. Sun! :)</strong>
-                  </div>
-                </div>
-                <div class="flower-row" aria-hidden="true">❀ ✿ ❁ ✾ ❀</div>
-              </article>
-            </div>
-
-            <div class="letter-actions">
-              <button class="hand-link" id="foldLetter">fold the letter</button>
-            </div>
-          </div>
-
-          <section class="stamp-view" id="stampView" aria-hidden="true">
-            <header class="stamp-header">
-              <p class="stamp-kicker">on the back of the letter…</p>
-              <h3>a few tiny stamps for you</h3>
-              <p class="stamp-subcopy">tap whichever one catches your eye ♡</p>
-            </header>
-
-            <div class="stamp-grid" id="stampGrid">
-              <button class="stamp-card" data-stamp="smile" aria-label="Smile stamp">
-                <span class="stamp-edge"></span>
-                <span class="stamp-front"><span class="stamp-icon">☀</span><span class="stamp-title">that smile</span></span>
-                <span class="stamp-back">That smile of yours has a way of making everything around it feel a little lighter.</span>
-              </button>
-
-              <button class="stamp-card" data-stamp="laugh" aria-label="Laugh stamp">
-                <span class="stamp-edge"></span>
-                <span class="stamp-front"><span class="stamp-icon">♪</span><span class="stamp-title">that laugh</span></span>
-                <span class="stamp-back">Your laugh is one of those things that is very easy to notice and very hard not to like.</span>
-              </button>
-
-              <button class="stamp-card" data-stamp="emoji" aria-label="Laughing emoji stamp">
-                <span class="stamp-edge"></span>
-                <span class="stamp-front"><span class="stamp-icon">😂</span><span class="stamp-title">of course</span></span>
-                <span class="stamp-back">I’m convinced no conversation with you is officially complete until at least one 😂 shows up.</span>
-              </button>
-
-              <button class="stamp-card" data-stamp="coffee" aria-label="Coffee stamp">
-                <span class="stamp-edge"></span>
-                <span class="stamp-front"><span class="stamp-icon">☕</span><span class="stamp-title">coffee?</span></span>
-                <span class="stamp-back">That coffee still stands, by the way — whenever it feels right.</span>
-              </button>
-
-              <button class="stamp-card" data-stamp="italian" aria-label="Italian food stamp">
-                <span class="stamp-edge"></span>
-                <span class="stamp-front"><span class="stamp-icon">🍝</span><span class="stamp-title">Italian detour</span></span>
-                <span class="stamp-back">Italian food still feels like a very good combination of good food, good conversation and no rush.</span>
-              </button>
-
-              <button class="stamp-card" data-stamp="foodie" aria-label="Foodie stamp">
-                <span class="stamp-edge"></span>
-                <span class="stamp-front"><span class="stamp-icon">✦</span><span class="stamp-title">for the foodie</span></span>
-                <span class="stamp-back">Good food clearly matters to you, and I have a feeling that could lead to a lot of very good discoveries.</span>
-              </button>
-
-              <button class="stamp-card" data-stamp="hidden" aria-label="Hidden places stamp">
-                <span class="stamp-edge"></span>
-                <span class="stamp-front"><span class="stamp-icon">⌖</span><span class="stamp-title">hidden places</span></span>
-                <span class="stamp-back">There is something very nice about preferring the little hidden places people usually walk past.</span>
-              </button>
-
-              <button class="stamp-card" data-stamp="style" aria-label="Style stamp">
-                <span class="stamp-edge"></span>
-                <span class="stamp-front"><span class="stamp-icon">✧</span><span class="stamp-title">style note</span></span>
-                <span class="stamp-back">You have that rare kind of style that looks effortless even when everything is clearly very well put together.</span>
-              </button>
-
-              <div class="stamp-extra" id="stampExtra" aria-hidden="true">
-                <button class="stamp-card" data-stamp="glasses" aria-label="Glasses stamp">
-                  <span class="stamp-edge"></span>
-                  <span class="stamp-front"><span class="stamp-icon">⌐◉</span><span class="stamp-title">the glasses</span></span>
-                  <span class="stamp-back">The glasses really do suit you — they somehow make the whole look even more you.</span>
-                </button>
-
-                <button class="stamp-card" data-stamp="virgo" aria-label="Virgo stamp">
-                  <span class="stamp-edge"></span>
-                  <span class="stamp-front"><span class="stamp-icon">♍</span><span class="stamp-title">Virgo things</span></span>
-                  <span class="stamp-back">The attention to little details and that quietly put-together energy does feel very Virgo.</span>
-                </button>
-
-                <button class="stamp-card" data-stamp="templerun" aria-label="Temple Run stamp">
-                  <span class="stamp-edge"></span>
-                  <span class="stamp-front"><span class="stamp-icon">➜</span><span class="stamp-title">Temple Run</span></span>
-                  <span class="stamp-back">Somehow Temple Run has become one of the random little things that now feels very you.</span>
-                </button>
-
-                <button class="stamp-card" data-stamp="tall" aria-label="Tall stamp">
-                  <span class="stamp-edge"></span>
-                  <span class="stamp-front"><span class="stamp-icon">↟</span><span class="stamp-title">5'10 energy</span></span>
-                  <span class="stamp-back">Being 5'10 already gives you a bit of main-character entrance energy, whether you admit it or not.</span>
-                </button>
-
-                <button class="stamp-card" data-stamp="travel" aria-label="Travel stamp">
-                  <span class="stamp-edge"></span>
-                  <span class="stamp-front"><span class="stamp-icon">✈</span><span class="stamp-title">little explorer</span></span>
-                  <span class="stamp-back">The best kind of travel is probably the kind that leaves you with one place nobody else thought to look for.</span>
-                </button>
-
-                <button class="stamp-card" data-stamp="bihar" aria-label="Bihar stamp">
-                  <span class="stamp-edge"></span>
-                  <span class="stamp-front"><span class="stamp-icon">⌂</span><span class="stamp-title">Bihar</span></span>
-                  <span class="stamp-back">A little bit of Bihar somewhere in the story makes the whole picture feel more interesting.</span>
-                </button>
-
-                <button class="stamp-card" data-stamp="kajoo" aria-label="Kajoo stamp">
-                  <span class="stamp-edge"></span>
-                  <span class="stamp-front"><span class="stamp-icon">♡</span><span class="stamp-title">Kajoo</span></span>
-                  <span class="stamp-back">Kajoo is still one of those names that is impossible to hear without smiling a little.</span>
-                </button>
-
-                <button class="stamp-card" data-stamp="name" aria-label="Dincy Kajol stamp">
-                  <span class="stamp-edge"></span>
-                  <span class="stamp-front"><span class="stamp-icon">✎</span><span class="stamp-title">Dincy Kajol</span></span>
-                  <span class="stamp-back">Dincy Kajol has a very nice ring to it — soft, memorable, and very much its own thing.</span>
-                </button>
-
-                <button class="stamp-card" data-stamp="lilly" aria-label="Lilly work stamp">
-                  <span class="stamp-edge"></span>
-                  <span class="stamp-front"><span class="stamp-icon">⚕</span><span class="stamp-title">serious work</span></span>
-                  <span class="stamp-back">Serious work, sharp mind, and somehow still enough room left for all the laughter.</span>
-                </button>
-
-                <button class="stamp-card" data-stamp="navy" aria-label="Navy roots stamp">
-                  <span class="stamp-edge"></span>
-                  <span class="stamp-front"><span class="stamp-icon">⚓</span><span class="stamp-title">Navy roots</span></span>
-                  <span class="stamp-back">There is something quietly lovely about having Navy roots in the story.</span>
-                </button>
-
-                <button class="stamp-card" data-stamp="curious" aria-label="Little things stamp">
-                  <span class="stamp-edge"></span>
-                  <span class="stamp-front"><span class="stamp-icon">…</span><span class="stamp-title">little things</span></span>
-                  <span class="stamp-back">It’s funny how the smallest details are usually the ones that make someone the most interesting.</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="stamp-controls">
-              <button class="hand-link hand-link--small" id="moreStamps">more little stamps ↓</button>
-              <button class="hand-link hand-link--small" id="reopenLetter">read the letter again ↺</button>
-            </div>
-          </section>
+      <div class="frame frame--letter"><div class="inner inner--letter">
+        <div class="doodles" aria-hidden="true"><div class="doodle doodle--1">✤</div><div class="doodle doodle--2">✤</div><div class="doodle doodle--3">♡</div></div>
+        <div class="letter-view" id="letterView">
+          <header class="letter-header"><p class="letter-kicker">a little handwritten honesty</p><h2>Dear Dincy,</h2></header>
+          <div class="paper-holder"><article class="letter-paper"><div class="letter-inner"><p>Hope this letter finds you well. Over the last few days we shared a lot of laughs and fun vibe, however somethings which I have said may have not really felt pleasant. I really feel bad for what I said. I've been thinking about it a lot and its left a void in me. Honestly, it feels like a bad dream and your silence is killing me. I just wanted to apologise once again for my mistake. Words can be bitter sometimes and I didn't want it to be that way. Hope you forgive me :)</p><div class="signature"><span>Yours Truly,</span><strong>Mr. Sun! :)</strong></div></div><div class="flower-row" aria-hidden="true">❀ ✿ ❁ ✾ ❀</div></article></div>
+          <div class="letter-actions"><button class="turn-letter-btn" id="foldLetter" aria-label="Turn the letter over"><span class="turn-copy">there’s a little more on the other side</span><span class="turn-arrow">→</span><span class="page-curl" aria-hidden="true"></span></button></div>
         </div>
-      </div>
+
+        <section class="stamp-view" id="stampView" aria-hidden="true">
+          <header class="stamp-header"><p class="stamp-kicker">on the back of the letter…</p><h3>a few tiny stamps for you</h3><p class="stamp-subcopy">little things that reminded me of you ♡</p></header>
+          <div class="stamp-grid" id="stampGrid">
+            <button class="stamp-card" data-stamp="smile"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">☀</span><span class="stamp-title">that smile</span><span class="stamp-postage">25</span></span><span class="stamp-back">That smile of yours has a way of making everything around it feel a little lighter.</span></button>
+            <button class="stamp-card" data-stamp="laugh"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">♪</span><span class="stamp-title">that laugh</span><span class="stamp-postage">25</span></span><span class="stamp-back">Your laugh is one of those things that is very easy to notice and very hard not to like.</span></button>
+            <button class="stamp-card" data-stamp="emoji"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">☺</span><span class="stamp-title">of course 😂</span><span class="stamp-postage">25</span></span><span class="stamp-back">I’m convinced no conversation with you is officially complete until at least one 😂 shows up.</span></button>
+            <button class="stamp-card" data-stamp="coffee"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">◒</span><span class="stamp-title">coffee?</span><span class="stamp-postage">25</span></span><span class="stamp-back">That coffee still stands, by the way — whenever it feels right.</span></button>
+            <button class="stamp-card" data-stamp="italian"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">◡</span><span class="stamp-title">Italian detour</span><span class="stamp-postage">25</span></span><span class="stamp-back">Italian food still feels like a very good combination of good food, good conversation and no rush.</span></button>
+            <button class="stamp-card" data-stamp="foodie"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">✦</span><span class="stamp-title">for the foodie</span><span class="stamp-postage">25</span></span><span class="stamp-back">Good food clearly matters to you, and that could lead to a lot of very good discoveries.</span></button>
+            <button class="stamp-card" data-stamp="hidden"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">⌖</span><span class="stamp-title">hidden places</span><span class="stamp-postage">25</span></span><span class="stamp-back">There is something very nice about preferring the little hidden places people usually walk past.</span></button>
+            <button class="stamp-card" data-stamp="style"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">✧</span><span class="stamp-title">style note</span><span class="stamp-postage">25</span></span><span class="stamp-back">You have that rare kind of style that looks effortless even when everything is clearly very well put together.</span></button>
+            <div class="stamp-extra" id="stampExtra" aria-hidden="true">
+              <button class="stamp-card" data-stamp="glasses"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">◉—◉</span><span class="stamp-title">the glasses</span><span class="stamp-postage">25</span></span><span class="stamp-back">The glasses really do suit you — they somehow make the whole look even more you.</span></button>
+              <button class="stamp-card" data-stamp="virgo"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">♍</span><span class="stamp-title">Virgo things</span><span class="stamp-postage">25</span></span><span class="stamp-back">The attention to little details and that quietly put-together energy does feel very Virgo.</span></button>
+              <button class="stamp-card" data-stamp="templerun"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">→</span><span class="stamp-title">Temple Run</span><span class="stamp-postage">25</span></span><span class="stamp-back">Somehow Temple Run has become one of those random little things that feels very you.</span></button>
+              <button class="stamp-card" data-stamp="tall"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">↟</span><span class="stamp-title">5'10 energy</span><span class="stamp-postage">25</span></span><span class="stamp-back">Being 5'10 already gives you a bit of main-character entrance energy, whether you admit it or not.</span></button>
+              <button class="stamp-card" data-stamp="travel"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">✈</span><span class="stamp-title">little explorer</span><span class="stamp-postage">25</span></span><span class="stamp-back">The best kind of travel is probably the kind that leaves you with one place nobody else thought to look for.</span></button>
+              <button class="stamp-card" data-stamp="bihar"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">⌂</span><span class="stamp-title">Bihar</span><span class="stamp-postage">25</span></span><span class="stamp-back">A little bit of Bihar somewhere in the story makes the whole picture feel more interesting.</span></button>
+              <button class="stamp-card" data-stamp="kajoo"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">♡</span><span class="stamp-title">Kajoo</span><span class="stamp-postage">25</span></span><span class="stamp-back">Kajoo is still one of those names that is impossible to hear without smiling a little.</span></button>
+              <button class="stamp-card" data-stamp="name"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">✎</span><span class="stamp-title">Dincy Kajol</span><span class="stamp-postage">25</span></span><span class="stamp-back">Dincy Kajol has a very nice ring to it — soft, memorable, and very much its own thing.</span></button>
+              <button class="stamp-card" data-stamp="lilly"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">⚕</span><span class="stamp-title">serious work</span><span class="stamp-postage">25</span></span><span class="stamp-back">Serious work, sharp mind, and somehow still enough room left for all the laughter.</span></button>
+              <button class="stamp-card" data-stamp="navy"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">⚓</span><span class="stamp-title">Navy roots</span><span class="stamp-postage">25</span></span><span class="stamp-back">There is something quietly lovely about having Navy roots in the story.</span></button>
+              <button class="stamp-card" data-stamp="curious"><span class="stamp-edge"></span><span class="stamp-front"><span class="stamp-icon">…</span><span class="stamp-title">little things</span><span class="stamp-postage">25</span></span><span class="stamp-back">It’s funny how the smallest details are usually the ones that make someone the most interesting.</span></button>
+            </div>
+          </div>
+          <div class="stamp-controls"><button class="hand-link hand-link--small" id="moreStamps">more little stamps ↓</button><button class="hand-link hand-link--small" id="reopenLetter">read the letter again ↺</button></div>
+        </section>
+      </div></div>
     </section>
   </main>
-
   <script src="script.js"></script>
 </body>
 </html>
