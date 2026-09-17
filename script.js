@@ -57,19 +57,14 @@ function installClosingNote() {
   closing.className = 'final-thank-you';
   closing.setAttribute('aria-label', 'Thank you note');
   closing.innerHTML = `
-    <div class="closing-envelope" aria-hidden="true">
-      <div class="closing-envelope-flap"></div>
-      <div class="closing-seal">☀</div>
-    </div>
+    <div class="closing-envelope" aria-hidden="true"><div class="closing-envelope-flap"></div><div class="closing-seal">☀</div></div>
     <p class="closing-kicker">one last little note</p>
     <h4>thank you for reading.</h4>
-    <div class="closing-signature">
-      <span>Yours Truly,</span>
-      <strong>Mr. Sun! :)</strong>
-    </div>
-    <div class="closing-flowers" aria-hidden="true">❀ ✿ ❁ ✾ ❀</div>
-  `;
-  stampView.appendChild(closing);
+    <div class="closing-signature"><span>Yours Truly,</span><strong>Mr. Sun! :)</strong></div>
+    <div class="closing-flowers" aria-hidden="true">❀ ✿ ❁ ✾ ❀</div>`;
+  const controls = stampView.querySelector('.stamp-controls');
+  if (controls) stampView.insertBefore(closing, controls);
+  else stampView.appendChild(closing);
 }
 
 function getAudioContext() {
@@ -95,11 +90,15 @@ function paperRustle(duration = 0.18, volume = 0.015) {
   source.start();
 }
 
-window.addEventListener('load', () => {
-  upgradeStampArtwork();
-  installClosingNote();
-  setTimeout(() => loader?.classList.add('is-hidden'), 700);
-});
+function initializeExperience() {
+  try { upgradeStampArtwork(); } catch (error) { console.warn('Stamp artwork fallback in use.', error); }
+  try { installClosingNote(); } catch (error) { console.warn('Closing-note fallback in use.', error); }
+  setTimeout(() => loader?.classList.add('is-hidden'), 650);
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializeExperience, { once: true });
+else initializeExperience();
+// Loader must never block the page if a browser delays an event.
+setTimeout(() => loader?.classList.add('is-hidden'), 2500);
 
 function openLetterExperience() {
   if (opening) return;
