@@ -9,113 +9,106 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="loader" class="loader" aria-live="polite">
-    <div class="loader-inner">
-      <svg viewBox="0 0 120 100" class="loader-heart" aria-hidden="true"><path d="M60 88C31 69 13 50 14 30C15 13 35 9 48 23C56 7 80 10 89 25C102 47 84 68 60 88Z"/></svg>
+  <div class="loader" id="loader" aria-live="polite">
+    <div>
+      <div class="loader-heart">♡</div>
       <p>folding the letter…</p>
     </div>
   </div>
 
-  <main id="app" aria-hidden="true">
-    <section id="landing" class="scene scene--landing">
-      <div class="card-shell card-shell--landing" aria-label="A handmade letter card for Dincy">
-        <div class="border-shell" aria-hidden="true"></div>
-        <article class="card card--landing">
-          <div class="card-stitch" aria-hidden="true"></div>
-
-          <div class="doodle-flower flower-a" aria-hidden="true">
-            <svg viewBox="0 0 56 56"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"><path d="M28 8c3 5 3 10 0 15-3-5-3-10 0-15Z"/><path d="M28 48c-3-5-3-10 0-15 3 5 3 10 0 15Z"/><path d="M8 28c5-3 10-3 15 0-5 3-10 3-15 0Z"/><path d="M48 28c-5 3-10 3-15 0 5-3 10-3 15 0Z"/><path d="M15 15c5 .5 8 3.5 10 8-5-.5-8-3.5-10-8Z"/><path d="M41 41c-5-.5-8-3.5-10-8 5 .5 8 3.5 10 8Z"/><path d="M15 41c.5-5 3.5-8 8-10-.5 5-3.5 8-8 10Z"/><path d="M41 15c-.5 5-3.5 8-8 10 .5-5 3.5-8 8-10Z"/></g><circle cx="28" cy="28" r="3.5" fill="currentColor" stroke="none"/></svg>
-          </div>
-          <div class="doodle-flower flower-b" aria-hidden="true">
-            <svg viewBox="0 0 56 56"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"><path d="M28 8c3 5 3 10 0 15-3-5-3-10 0-15Z"/><path d="M28 48c-3-5-3-10 0-15 3 5 3 10 0 15Z"/><path d="M8 28c5-3 10-3 15 0-5 3-10 3-15 0Z"/><path d="M48 28c-5 3-10 3-15 0 5-3 10-3 15 0Z"/></g><circle cx="28" cy="28" r="3.5" fill="currentColor" stroke="none"/></svg>
-          </div>
-          <div class="doodle-heart heart-a" aria-hidden="true">
-            <svg viewBox="0 0 40 36"><path d="M20 31C10 24 4 18 4 11C4 5 9 3 13 3C16 3 19 5 20 8C21 5 24 3 27 3C31 3 36 5 36 11C36 18 30 24 20 31Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="doodle-spark spark-a" aria-hidden="true">
-            <svg viewBox="0 0 30 30"><path d="M15 2L17.8 12.2L28 15L17.8 17.8L15 28L12.2 17.8L2 15L12.2 12.2Z" fill="currentColor"/></svg>
+  <main>
+    <section class="scene" id="landing">
+      <div class="frame">
+        <div class="inner inner--landing">
+          <div class="doodles" aria-hidden="true">
+            <div class="doodle doodle--1">✤</div>
+            <div class="doodle doodle--2">✤</div>
+            <div class="doodle doodle--3">♡</div>
+            <div class="doodle doodle--4">✦</div>
           </div>
 
-          <div class="topline">
-            <p class="hand-note note-left">for Dincy</p>
-          </div>
+          <div class="top-note">for Dincy</div>
 
-          <div class="hero">
-            <p class="kicker">hey...</p>
+          <header class="hero">
+            <p class="kicker">hey…</p>
             <h1>I left something<br />here for you.</h1>
             <p class="subcopy">open when you feel like it ♡</p>
-          </div>
-
-          <div class="envelope-zone">
-            <button id="openLetter" class="envelope-button" aria-label="Open the letter">
-              <div class="envelope" aria-hidden="true">
-                <div class="envelope-back"></div>
-                <div class="letter-peek"><span>Dear Dincy,</span></div>
-                <div class="envelope-pocket"></div>
-                <div class="envelope-flap"></div>
-                <div class="wax-seal">☀</div>
-              </div>
-            </button>
-            <button id="openCta" class="cta-link cta-link--open">open the letter →</button>
-          </div>
-
-          <div class="bottomline">
-            <button id="soundToggle" class="sound-toggle" aria-pressed="false">♪ sound off</button>
-          </div>
-        </article>
-      </div>
-      <p id="openingWhisper" class="opening-whisper">okay… here goes.</p>
-    </section>
-
-    <section id="letterScene" class="scene scene--letter" aria-hidden="true">
-      <div class="card-shell card-shell--letter">
-        <div class="border-shell" aria-hidden="true"></div>
-        <article id="letterSheet" class="card card--letter">
-          <div class="card-stitch" aria-hidden="true"></div>
-
-          <div class="doodle-flower flower-c" aria-hidden="true">
-            <svg viewBox="0 0 56 56"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"><path d="M28 8c3 5 3 10 0 15-3-5-3-10 0-15Z"/><path d="M28 48c-3-5-3-10 0-15 3 5 3 10 0 15Z"/><path d="M8 28c5-3 10-3 15 0-5 3-10 3-15 0Z"/><path d="M48 28c-5 3-10 3-15 0 5-3 10-3 15 0Z"/></g><circle cx="28" cy="28" r="3.5" fill="currentColor" stroke="none"/></svg>
-          </div>
-          <div class="doodle-flower flower-d" aria-hidden="true">
-            <svg viewBox="0 0 56 56"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"><path d="M28 8c3 5 3 10 0 15-3-5-3-10 0-15Z"/><path d="M28 48c-3-5-3-10 0-15 3 5 3 10 0 15Z"/><path d="M8 28c5-3 10-3 15 0-5 3-10 3-15 0Z"/><path d="M48 28c-5 3-10 3-15 0 5-3 10-3 15 0Z"/></g><circle cx="28" cy="28" r="3.5" fill="currentColor" stroke="none"/></svg>
-          </div>
-          <div class="doodle-heart heart-b" aria-hidden="true">
-            <svg viewBox="0 0 40 36"><path d="M20 31C10 24 4 18 4 11C4 5 9 3 13 3C16 3 19 5 20 8C21 5 24 3 27 3C31 3 36 5 36 11C36 18 30 24 20 31Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
-          </div>
-
-          <header class="letter-header">
-            <p class="kicker">a little handwritten honesty</p>
-            <h2>Dear Dincy,</h2>
           </header>
 
-          <div class="note-sheet-wrap">
-            <div class="note-sheet">
-              <div class="note-sheet__inner">
-                <p>
-                  Hope this letter finds you well. Over the last few days we shared a lot of laughs and fun vibe, however somethings which I have said may have not really felt pleasant. I really feel bad for what I said. I've been thinking about it a lot and its left a void in me. Honestly, it feels like a bad dream and your silence is killing me. I just wanted to apologise once again for my mistake. Words can be bitter sometimes and I didn't want it to be that way. Hope you forgive me :)
-                </p>
-                <div class="signature">
-                  <span>Yours Truly,</span>
-                  <strong>Mr. Sun! :)</strong>
+          <div class="envelope-area">
+            <button class="envelope-button" id="openEnvelope" aria-label="Open the letter">
+              <div class="envelope" id="envelope">
+                <div class="envelope-back"></div>
+
+                <div class="paper-peek" aria-hidden="true">
+                  <div class="peek-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="peek-label">a little note inside…</div>
                 </div>
+
+                <div class="envelope-pocket"></div>
+                <div class="envelope-flap"></div>
+                <div class="seal">☀</div>
               </div>
-              <div class="flower-row" aria-hidden="true">
-                <span>❀</span><span>✿</span><span>❁</span><span>✾</span><span>❀</span>
-              </div>
+            </button>
+
+            <button class="hand-link" id="openLetterText">open the letter →</button>
+          </div>
+
+          <button class="sound-toggle" id="soundToggle" aria-pressed="false">♪ sound off</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene letter-scene" id="letterScene" aria-hidden="true">
+      <div class="frame">
+        <div class="inner inner--letter">
+          <div class="doodles" aria-hidden="true">
+            <div class="doodle doodle--1">✤</div>
+            <div class="doodle doodle--2">✤</div>
+            <div class="doodle doodle--3">♡</div>
+          </div>
+
+          <div class="letter-view" id="letterView">
+            <header class="letter-header">
+              <p class="letter-kicker">a little handwritten honesty</p>
+              <h2>Dear Dincy,</h2>
+            </header>
+
+            <div class="paper-holder">
+              <article class="letter-paper">
+                <div class="letter-inner">
+                  <p>
+                    Hope this letter finds you well. Over the last few days we shared a lot of laughs and fun vibe, however somethings which I have said may have not really felt pleasant. I really feel bad for what I said. I've been thinking about it a lot and its left a void in me. Honestly, it feels like a bad dream and your silence is killing me. I just wanted to apologise once again for my mistake. Words can be bitter sometimes and I didn't want it to be that way. Hope you forgive me :)
+                  </p>
+
+                  <div class="signature">
+                    <span>Yours Truly,</span>
+                    <strong>Mr. Sun! :)</strong>
+                  </div>
+                </div>
+
+                <div class="flower-row" aria-hidden="true">❀ ✿ ❁ ✾ ❀</div>
+              </article>
+            </div>
+
+            <div class="letter-actions">
+              <button class="hand-link" id="foldLetter">fold the letter</button>
             </div>
           </div>
 
-          <div class="letter-actions">
-            <button id="foldLetter" class="cta-link cta-link--fold">fold the letter</button>
+          <div class="ending-view" id="endingView" aria-hidden="true">
+            <div class="mini-envelope"><span>☀</span></div>
+            <div>
+              <h3>thank you for reading.</h3>
+              <p>Mr. Sun :)</p>
+            </div>
+            <button class="hand-link" id="reopenLetter">read it once more ↺</button>
           </div>
-        </article>
-
-        <section id="closedEnding" class="closed-ending" aria-hidden="true">
-          <div class="mini-envelope"><div class="mini-flap"></div><div class="mini-seal">☀</div></div>
-          <h3>thank you for reading.</h3>
-          <p>Mr. Sun :)</p>
-          <button id="reopen" class="cta-link cta-link--reopen">read it once more ↺</button>
-        </section>
+        </div>
       </div>
     </section>
   </main>
