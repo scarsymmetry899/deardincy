@@ -1,12 +1,6 @@
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 
-// Load the stamp refinement stylesheet without changing the base page structure.
-const refinement = document.createElement('link');
-refinement.rel = 'stylesheet';
-refinement.href = 'stamp-refinement.css';
-document.head.appendChild(refinement);
-
 const loader = $('#loader');
 const landing = $('#landing');
 const letterScene = $('#letterScene');
@@ -52,26 +46,8 @@ function upgradeStampArtwork() {
   $$('.stamp-card').forEach((stamp) => {
     const key = stamp.dataset.stamp;
     const icon = stamp.querySelector('.stamp-icon');
-    const front = stamp.querySelector('.stamp-front');
-    if (icon && iconPaths[key]) {
-      icon.textContent = '';
-      icon.innerHTML = `<svg viewBox="0 0 48 48" aria-hidden="true">${iconPaths[key]}</svg>`;
-    }
-    if (front && !front.querySelector('.stamp-postage')) {
-      const postage = document.createElement('span');
-      postage.className = 'stamp-postage';
-      postage.setAttribute('aria-hidden', 'true');
-      postage.textContent = '25';
-      front.prepend(postage);
-    }
+    if (icon && iconPaths[key]) icon.innerHTML = `<svg viewBox="0 0 48 48" aria-hidden="true">${iconPaths[key]}</svg>`;
   });
-}
-
-function upgradeTurnCue() {
-  if (!foldLetter) return;
-  foldLetter.className = 'turn-letter-btn';
-  foldLetter.setAttribute('aria-label', 'Turn the letter over');
-  foldLetter.innerHTML = '<span class="turn-copy">there’s a little more on the other side</span><span class="turn-arrow" aria-hidden="true">→</span><span class="page-curl" aria-hidden="true"></span>';
 }
 
 function getAudioContext() {
@@ -99,54 +75,53 @@ function paperRustle(duration = 0.18, volume = 0.015) {
 
 window.addEventListener('load', () => {
   upgradeStampArtwork();
-  upgradeTurnCue();
-  setTimeout(() => loader.classList.add('is-hidden'), 900);
+  setTimeout(() => loader?.classList.add('is-hidden'), 700);
 });
 
 function openLetterExperience() {
   if (opening) return;
   opening = true;
-  envelope.classList.add('is-opening');
+  envelope?.classList.add('is-opening');
   paperRustle(0.22, 0.02);
   setTimeout(() => {
-    landing.classList.add('is-hidden');
-    letterScene.classList.add('is-visible');
-    letterScene.setAttribute('aria-hidden', 'false');
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, 1450);
+    landing?.classList.add('is-hidden');
+    letterScene?.classList.add('is-visible');
+    letterScene?.setAttribute('aria-hidden', 'false');
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, 1200);
 }
 
-openEnvelope.addEventListener('click', openLetterExperience);
-openLetterText.addEventListener('click', openLetterExperience);
+openEnvelope?.addEventListener('click', openLetterExperience);
+openLetterText?.addEventListener('click', openLetterExperience);
 
-foldLetter.addEventListener('click', () => {
-  if (letterView.classList.contains('is-turning')) return;
+foldLetter?.addEventListener('click', () => {
+  if (letterView?.classList.contains('is-turning')) return;
   paperRustle(0.34, 0.024);
-  letterView.classList.add('is-turning');
-  foldLetter.setAttribute('disabled', 'true');
-
+  letterView?.classList.add('is-turning');
+  foldLetter.disabled = true;
   setTimeout(() => {
-    letterView.classList.add('is-hidden');
-    letterView.classList.remove('is-turning');
-    foldLetter.removeAttribute('disabled');
-    stampView.classList.add('is-visible');
-    stampView.setAttribute('aria-hidden', 'false');
+    letterView?.classList.add('is-hidden');
+    letterView?.classList.remove('is-turning');
+    foldLetter.disabled = false;
+    stampView?.classList.add('is-visible');
+    stampView?.setAttribute('aria-hidden', 'false');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, 720);
 });
 
-reopenLetter.addEventListener('click', () => {
+reopenLetter?.addEventListener('click', () => {
   paperRustle(0.18, 0.015);
-  stampView.classList.remove('is-visible');
-  stampView.setAttribute('aria-hidden', 'true');
-  letterView.classList.remove('is-hidden');
+  $$('.stamp-card.is-open').forEach((card) => card.classList.remove('is-open'));
+  stampView?.classList.remove('is-visible');
+  stampView?.setAttribute('aria-hidden', 'true');
+  letterView?.classList.remove('is-hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-moreStamps.addEventListener('click', () => {
+moreStamps?.addEventListener('click', () => {
   extrasVisible = !extrasVisible;
-  stampExtra.setAttribute('aria-hidden', extrasVisible ? 'false' : 'true');
-  moreStamps.textContent = extrasVisible ? 'fewer stamps ↑' : 'more little stamps ↓';
+  stampExtra?.setAttribute('aria-hidden', extrasVisible ? 'false' : 'true');
+  if (moreStamps) moreStamps.textContent = extrasVisible ? 'fewer stamps ↑' : 'more little stamps ↓';
   if (extrasVisible) paperRustle(0.12, 0.008);
 });
 
@@ -161,7 +136,7 @@ $$('.stamp-card').forEach((stamp) => {
   });
 });
 
-soundToggle.addEventListener('click', async () => {
+soundToggle?.addEventListener('click', async () => {
   soundOn = !soundOn;
   if (soundOn) {
     const ctx = getAudioContext();
