@@ -7,6 +7,7 @@
   <meta name="description" content="A little handwritten letter for Dincy." />
   <title>for Dincy</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="final-gating.css" />
 </head>
 <body>
   <div class="loader" id="loader" aria-hidden="true">
@@ -48,7 +49,6 @@
         <div class="hand-card__inner letter-shell">
           <section class="letter-view" id="letterView">
             <header class="letter-heading">
-              <span class="eyebrow">a little handwritten honesty</span>
               <h2>Dear Dincy,</h2>
             </header>
 
@@ -57,7 +57,7 @@
                 <p>Hope this letter finds you well. Over the last few days we shared a lot of laughs and fun vibe, however somethings which I have said may have not really felt pleasant. I really feel bad for what I said. I've been thinking about it a lot and its left a void in me. Honestly, it feels like a bad dream and your silence is killing me. I just wanted to apologise once again for my mistake. Words can be bitter sometimes and I didn't want it to be that way. Hope you forgive me :)</p>
                 <div class="signature">
                   <span>Yours Truly,</span>
-                  <strong>Mr. Sun! :)</strong>
+                  <strong>Mr. Sun! :) ☀️</strong>
                 </div>
                 <div class="flower-line" aria-hidden="true">❀ ✿ ❁ ✾ ❀</div>
               </article>
@@ -75,19 +75,23 @@
 
           <section class="stamp-view" id="stampView" hidden aria-label="Little stamps for Dincy">
             <header class="stamp-heading">
-              <span class="eyebrow">on the back of the letter…</span>
               <h3>a few tiny stamps for you</h3>
               <p>little things that reminded me of you ♡</p>
             </header>
 
             <div class="stamp-grid" id="stampGrid"></div>
 
+            <div class="stamp-progress" id="stampProgress" aria-live="polite">open all the little stamps to finish the letter ♡</div>
+
             <div class="stamp-actions">
               <button class="text-button small-link" id="moreStamps">more little stamps ↓</button>
               <button class="text-button small-link" id="readAgain">read the letter again ↺</button>
+              <button class="close-letter-button" id="closeLetter" hidden>close the letter ♡</button>
             </div>
+          </section>
 
-            <section class="final-note" aria-label="Final thank you">
+          <section class="final-view" id="finalView" hidden aria-label="Final thank you">
+            <section class="final-note">
               <div class="mini-envelope" aria-hidden="true">
                 <span>☀</span>
               </div>
@@ -95,7 +99,7 @@
               <h4>thank you for reading.</h4>
               <div class="final-signature">
                 <span>Yours Truly,</span>
-                <strong>Mr. Sun! :)</strong>
+                <strong>Mr. Sun! :) ☀️</strong>
               </div>
               <div class="flower-line" aria-hidden="true">❀ ✿ ❁ ✾ ❀</div>
             </section>
