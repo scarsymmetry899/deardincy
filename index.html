@@ -17,19 +17,19 @@
   </div>
 
   <main>
-    <section class="scene" id="landing">
+    <section class="scene scene--landing" id="landing">
       <div class="frame">
         <div class="inner inner--landing">
           <div class="doodles" aria-hidden="true">
-            <div class="doodle doodle--1">✤</div>
-            <div class="doodle doodle--2">✤</div>
-            <div class="doodle doodle--3">♡</div>
-            <div class="doodle doodle--4">✦</div>
+            <span class="doodle doodle--1">✤</span>
+            <span class="doodle doodle--2">✤</span>
+            <span class="doodle doodle--3">♡</span>
+            <span class="doodle doodle--4">✦</span>
           </div>
 
           <div class="top-note">for Dincy</div>
 
-          <header class="hero">
+          <header class="hero" id="hero">
             <p class="kicker">hey…</p>
             <h1>I left something<br />here for you.</h1>
             <p class="subcopy">open when you feel like it ♡</p>
@@ -40,22 +40,19 @@
               <div class="envelope" id="envelope">
                 <div class="envelope-back"></div>
 
-                <div class="paper-peek" aria-hidden="true">
-                  <div class="peek-lines">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="letter-card" aria-hidden="true">
+                  <div class="letter-scribbles">
+                    <span></span><span></span><span></span>
                   </div>
-                  <div class="peek-label">a little note inside…</div>
                 </div>
 
-                <div class="envelope-pocket"></div>
+                <div class="envelope-front"></div>
                 <div class="envelope-flap"></div>
                 <div class="seal">☀</div>
               </div>
             </button>
 
-            <button class="hand-link" id="openLetterText">open the letter →</button>
+            <button class="hand-link open-link" id="openLetterText">open the letter →</button>
           </div>
 
           <button class="sound-toggle" id="soundToggle" aria-pressed="false">♪ sound off</button>
@@ -63,13 +60,13 @@
       </div>
     </section>
 
-    <section class="scene letter-scene" id="letterScene" aria-hidden="true">
-      <div class="frame">
+    <section class="scene scene--letter" id="letterScene" aria-hidden="true">
+      <div class="frame frame--letter">
         <div class="inner inner--letter">
           <div class="doodles" aria-hidden="true">
-            <div class="doodle doodle--1">✤</div>
-            <div class="doodle doodle--2">✤</div>
-            <div class="doodle doodle--3">♡</div>
+            <span class="doodle doodle--1">✤</span>
+            <span class="doodle doodle--2">✤</span>
+            <span class="doodle doodle--3">♡</span>
           </div>
 
           <div class="letter-view" id="letterView">
@@ -81,9 +78,7 @@
             <div class="paper-holder">
               <article class="letter-paper">
                 <div class="letter-inner">
-                  <p>
-                    Hope this letter finds you well. Over the last few days we shared a lot of laughs and fun vibe, however somethings which I have said may have not really felt pleasant. I really feel bad for what I said. I've been thinking about it a lot and its left a void in me. Honestly, it feels like a bad dream and your silence is killing me. I just wanted to apologise once again for my mistake. Words can be bitter sometimes and I didn't want it to be that way. Hope you forgive me :)
-                  </p>
+                  <p>Hope this letter finds you well. Over the last few days we shared a lot of laughs and fun vibe, however somethings which I have said may have not really felt pleasant. I really feel bad for what I said. I've been thinking about it a lot and its left a void in me. Honestly, it feels like a bad dream and your silence is killing me. I just wanted to apologise once again for my mistake. Words can be bitter sometimes and I didn't want it to be that way. Hope you forgive me :)</p>
 
                   <div class="signature">
                     <span>Yours Truly,</span>
