@@ -1,0 +1,24 @@
+{
+  "$schema": "https://tinyodes-studio.vercel.app/showcase.schema.json",
+  "title": "Dear Dincy",
+  "slug": "dear-dincy",
+  "occasions": [
+    "apologies",
+    "couples"
+  ],
+  "tagline": "A handmade apology letter with nineteen little stamps to discover.",
+  "concept": "It feels like opening a real handmade card. A sealed envelope opens, a handwritten apology rises out of it in the sender's own words, and the page turns to reveal nineteen postage stamps, each one a small thing that reminded him of her. Every stamp has to be opened before the letter can be closed, and only then does the signed thank-you appear.",
+  "features": [
+    "Wax-seal envelope and page-turn letter",
+    "Nineteen flip-to-reveal personal stamps with a progress counter",
+    "Ending unlocks only after every stamp is opened",
+    "Paper-rustle sound, reduced-motion support"
+  ],
+  "tech": "Static HTML/CSS/JS, hand-drawn SVG, Web Audio",
+  "liveUrl": "https://deardincy.vercel.app",
+  "cover": "/covers/deardincy.jpg",
+  "order": 20,
+  "kind": "original",
+  "consent": true,
+  "note": "Shown with the client's consent."
+}
